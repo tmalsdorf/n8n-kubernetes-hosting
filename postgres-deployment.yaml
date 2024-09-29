@@ -33,7 +33,7 @@ spec:
           ports:
             - containerPort: 5432
           volumeMounts:
-            - name: postgresql-pv
+            - name: pvc-n8n-postgresql
               mountPath: /var/lib/postgresql/data
             - name: init-data
               mountPath: /docker-entrypoint-initdb.d/init-n8n-user.sh
@@ -69,7 +69,7 @@ spec:
               value: '5432'
       restartPolicy: Always
       volumes:
-        - name: postgresql-pv
+        - name: pvc-n8n-postgresql
           persistentVolumeClaim:
             claimName: pvc-n8n-postgresql
         - name: postgres-secret

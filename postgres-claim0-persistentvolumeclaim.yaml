@@ -10,5 +10,5 @@ spec:
   resources:
     requests:
       storage: 300Gi
-  volumeName: pvc-n8n-postgresql
+  volumeName: pv-n8n-postgresql
   storageClassName: ""
