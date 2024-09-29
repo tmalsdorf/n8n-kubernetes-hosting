@@ -65,10 +65,6 @@ spec:
           volumeMounts:
             - mountPath: /home/node/.n8n
               name: pvc-n8n
-          securityContext:
-            runAsUser: 1026          # Run the container as user 1026
-            runAsGroup: 1026          # Optionally, you can also set the group
-            fsGroup: 1026             # File system group for mounted volumes    
       restartPolicy: Always
       volumes:
         - name: pvc-n8n
