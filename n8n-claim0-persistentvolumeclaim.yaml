@@ -1,13 +1,16 @@
+#adapted for nfs storage
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   labels:
-    service: n8n-claim0
-  name: n8n-claim0
+    service: pvc-n8n
+  name: pvc-n8n
   namespace: n8n
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
-      storage: 2Gi
+      storage: 5Gi
+  volumeName: pv-n8n
+  storageClassName: ""

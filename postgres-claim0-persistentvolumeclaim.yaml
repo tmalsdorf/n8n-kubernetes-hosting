@@ -1,11 +1,14 @@
+#adapted for nfs storage
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: postgresql-pv
+  name: pvc-n8n-postgresql
   namespace: n8n
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
       storage: 300Gi
+  volumeName: pvc-n8n-postgresql
+  storageClassName: ""
